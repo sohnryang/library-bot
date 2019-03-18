@@ -19,7 +19,7 @@ password_box = driver.find_element_by_name('login_pw')
 password_box.send_keys(password)
 password_box.submit()
 start_time = 13 if datetime.today().weekday() < 5 else 12
-print('waiting until %d PM' % (start_time))
+print('waiting until doomsday')
 while time(start_time, 0) >= datetime.today().time():
     sleep(0.1)
 driver.execute_script(reserver_code)
