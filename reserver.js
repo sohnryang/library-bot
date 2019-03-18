@@ -3,8 +3,10 @@
  */
 
 function generate_data(seat) {
-    let result = [];
-    for (time of [7, 9, 10])
+    let result = [], time_list = [], today = new Date();
+    if (today.getDay() % 6) time_list = [1, 4];
+    else time_list = [7, 9, 10]
+    for (time of time_list)
         result.push(`code=001&s_code=${seat}&t_code=${time}`);
     return result;
 }
