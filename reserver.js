@@ -2,6 +2,9 @@
  * JS version (to use, paste to DevTools)
  */
 
+let url = 'http://hi.hana.hs.kr/SYSTEM_Plan/Lib_System';
+url += '/Lib_System_Reservation/reservation_exec.asp';
+
 function generate_data(seat) {
     let result = [], time_list = [], today = new Date();
     if (today.getDay() % 6) time_list = [1, 4];
@@ -16,9 +19,9 @@ for (let i = 1; i <= 72; ++i) {
     let payloads = generate_data(i);
     for (payload of payloads) {
         let xhttp = new XMLHttpRequest();
-        let url = 'http://hi.hana.hs.kr/SYSTEM_Plan/Lib_System/Lib_System_Reservation/reservation_exec.asp';
         xhttp.open('POST', url, true);
-        xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhttp.setRequestHeader('Content-Type',
+                               'application/x-www-form-urlencoded');
         xhttp.send(payload);
     }
 }
