@@ -23,3 +23,6 @@ print('waiting until doomsday')
 while time(start_time, 0) >= datetime.today().time():
     sleep(0.1)
 driver.execute_script(reserver_code)
+url = 'http://hi.hana.hs.kr/SYSTEM_Plan/Lib_System'
+url += '/Lib_System_Reservation/reservation_001_Lib.asp'
+driver.get(url)
