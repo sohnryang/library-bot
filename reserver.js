@@ -13,6 +13,11 @@ function generate_data(seat) {
     return result;
 }
 
+function sleepFor( sleepDuration ){
+    var now = new Date().getTime();
+    while(new Date().getTime() < now + sleepDuration){ /* do nothing */ } 
+}
+
 for (let i = 1; i <= 72; ++i) {
     console.log(`Trying seat #${i}`);
     let payloads = generate_data(i);
@@ -22,5 +27,7 @@ for (let i = 1; i <= 72; ++i) {
         xhttp.setRequestHeader('Content-Type',
                                'application/x-www-form-urlencoded');
         xhttp.send(payload);
+        sleepFor(500);
+        console.log(xhttp)
     }
 }
