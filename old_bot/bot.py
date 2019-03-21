@@ -6,7 +6,7 @@ from time import sleep
 username = ''
 password = ''
 reserver_code = ''
-with open('credential.txt') as f:
+with open('../credential.txt') as f:
     username = f.readline().strip()
     password = f.readline().strip()
 with open('reserver.js') as f:
